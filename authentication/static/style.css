@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 55px;
+    background: #007367;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo img {
+    width: 150px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+}
+
+nav a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+
+
+}
+
+nav a:hover,
+nav a.active {
+    color:#015249;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    font-size: 100px;
+    color: #fff;
+    font-weight: 700;
+}
+
+section:nth-child(odd){
+    background:rgb(187, 227, 235);
+}
+
+#home {
+    text-align: center; /* Align the content in the center */
+    margin-top: 50px; /* Add space above the section */
+}
+
+#home form {
+    display: inline-block; /* Display the form as inline block */
+}
+
+#home button {
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-top: 10px; /* Add space above the button */
+}
+
+#home button:hover {
+    background-color: #0056b3; /* Darken the background color on hover */
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.welcome h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #C1C8E4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body class="no-scroll">
+
+    <header>
+        <a href="#" class="logo">
+            <img src="{% static 'cats-logo-white.png' %}" alt="Logo">
+        </a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="{% url 'faculty_search' %}">Faculty search</a>
+            <a href="{% url 'contact' %}" {% if request.path == '/contact/' %}class="active"{% endif %}>Contact</a>
+        </nav>
+    </header>
+
+
+
+    <section id="home">
+        <div class="container">
+            <div class="welcome">
+                <h1>Welcome to Professor Search</h1>
+            </div>
+            <form action="{% url 'faculty_search' %}" method="get">
+                <button type="submit">Click Here</button>
+            </form>
+        </div>
+    </section>
+
+
+    
+    <section id="faculty">Faculty search</section>
+    <section id="contact">Contact</section>
+
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

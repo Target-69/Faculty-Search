@@ -1,0 +1,89 @@
+<!-- search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .banner {
+            display: block;
+            width: 100%;
+            max-width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if results %}
+            <h2>Search Results:</h2>
+            <ul>
+                {% for faculty in results %}
+                <img 
+                class="banner"
+                src="{{ faculty.banner.url }}" alt="Banner Image">
+                <li>
+                    <strong>Name:</strong> {{ faculty.name }}<br>
+                    <strong>School:</strong> {{ faculty.school }}<br>
+                    <strong>Post:</strong> {{ faculty.post }}<br>
+                    <strong>Subject:</strong> {{ faculty.subject }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+        <a href="{% url 'faculty_search' %}" class="btn">Back</a>
+    </div>
+</body>
+</html>

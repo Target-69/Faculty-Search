@@ -1,0 +1,84 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}" class="logo">
+            <img src="https://cdn.gitam.edu/images/logo/cats-logo-white.png" alt="CATS-logo">
+        </a>
+        <nav>
+            <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}>Home</a>
+            <a href="{% url 'faculty_search' %}" {% if request.path == '/search/' %}class="active"{% endif %}>Faculty search</a>
+            <a href="{% url 'contact' %}" {% if request.path == '/contact/' %}class="active"{% endif %}>Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About Contact</h1>
+        <p>You can contact me through the following channels:</p>
+        <p>Email: areddem@gmail.com</p>
+        <p>Mobile: +91-7075915855</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/goofbeast_/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/AkhildevReddy20/" target="_blank">Facebook</a>
+        </div>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
